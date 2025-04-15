@@ -8,6 +8,10 @@ body {
 	font-family: "Rubik", sans-serif;
 }
 
+.bgd {
+	width: 100%;
+}
+
 .menuburger {
 	position: relative;
 	position: absolute;
