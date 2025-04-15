@@ -25,9 +25,9 @@ function createmenu() {
 	const img2element = document.createElement("img");
 	const img3element = document.createElement("img");
 
-	img1element.src = "./assets/explore-logo.svg";
-	img2element.src = "./assets/arena-logo.svg";
-	img3element.src = "./assets/rule-logo.svg";
+	img1element.src = "../assets/explore-logo.svg";
+	img2element.src = "../assets/arena-logo.svg";
+	img3element.src = "../assets/rule-logo.svg";
 
 	img1element.alt = "explore logo";
 	img2element.alt = "arena logo";
