@@ -5,18 +5,6 @@ main {
 	align-items: center;
 }
 
-.box {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	position: absolute;
-	background-color: #e6eff4;
-	top: 230px;
-	width: 80%;
-	border-radius: 4px;
-	padding: 20px;
-}
-
 .bgd-dirt {
 	position: relative;
 }
