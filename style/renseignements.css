@@ -1,0 +1,21 @@
+.tab-info {
+	display: flex;
+	gap: 15px;
+	background-color: #f5c2cd;
+	border-left: solid 5px #bc5c70;
+	padding: 5px;
+}
+
+.sec-info {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.sec-info p span {
+	font-weight: 600;
+}
+
+h1 {
+	line-height: 100%;
+}
