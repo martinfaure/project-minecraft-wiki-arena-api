@@ -5,7 +5,7 @@ function createmenu() {
 	menuburger.classList.add("menuburger");
 	document.body.appendChild(menuburger);
 	const imgclose = document.createElement("img");
-	imgclose.src = "./assets/window-close-menu-burger.svg";
+	imgclose.src = "../assets/window-close-menu-burger.svg";
 	imgclose.alt = "close menu burger";
 	imgclose.classList.add("close-menu");
 	menuburger.appendChild(imgclose);
