@@ -1,4 +1,5 @@
 const menu = document.querySelector("#menu-burger-mobile");
+const logoall = document.querySelector(".logo-all");
 
 function createmenu() {
 	const menuburger = document.createElement("div");
@@ -37,9 +38,13 @@ function createmenu() {
 	seconddivelement.appendChild(img2element);
 	thirddivelement.appendChild(img3element);
 
-	const spanelement1 = document.createElement("span");
-	const spanelement2 = document.createElement("span");
-	const spanelement3 = document.createElement("span");
+	const spanelement1 = document.createElement("a");
+	const spanelement2 = document.createElement("a");
+	const spanelement3 = document.createElement("a");
+
+	spanelement1.href = "../index.html";
+	spanelement2.href = "../html/arena.html";
+	spanelement3.href = "../html/rules.html";
 
 	spanelement1.classList.add("text-burger");
 	spanelement2.classList.add("text-burger");
@@ -64,4 +69,8 @@ function createmenu() {
 
 menu.addEventListener("click", () => {
 	createmenu();
+});
+
+logoall.addEventListener("click", () => {
+	window.location.href = "../index.html";
 });
