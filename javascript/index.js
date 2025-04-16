@@ -77,3 +77,12 @@ menu.addEventListener("click", () => {
 logoall.addEventListener("click", () => {
 	window.location.href = "../index.html";
 });
+
+const inputSearch = document.querySelector("#input-text");
+const btnSearch = document.querySelector("#search");
+
+btnSearch.addEventListener("click", async () => {
+	const response = await fetch(`http://192.168.1.15:3000/v1/entities`);
+	const data = await response.json();
+	console.log(data);
+});
