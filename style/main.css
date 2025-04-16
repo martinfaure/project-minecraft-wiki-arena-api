@@ -149,6 +149,22 @@ nav {
 	display: none;
 }
 
+.bgd-tab {
+	display: none;
+}
+
+.bgd-dirt-tab {
+	display: none;
+}
+
+.bgd-pc {
+	display: none;
+}
+
+.bgd-dirt-pc {
+	display: none;
+}
+
 @media screen and (min-width: 700px) {
 	.pages-nav ul {
 		display: flex;
@@ -160,10 +176,6 @@ nav {
 		justify-content: center;
 		align-items: center;
 		font-size: 16px;
-	}
-
-	.pages-nav ul li:active {
-		text-decoration: underline solid 3px white;
 	}
 
 	.pages-nav ul li img {
@@ -191,5 +203,51 @@ nav {
 		width: 23%;
 		justify-content: start;
 		padding-left: 15px;
+	}
+
+	.bgd {
+		display: none;
+	}
+
+	.bgd-tab {
+		display: block;
+		width: 100%;
+	}
+
+	.bgd-dirt-tab {
+		display: block;
+		width: 100%;
+	}
+
+	.sec-info-img-resp {
+		display: flex;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.bgd-tab {
+		display: none;
+	}
+
+	.bgd-dirt-tab {
+		display: none;
+	}
+	.bgd-pc {
+		display: block;
+		width: 100%;
+	}
+
+	.bgd-dirt-pc {
+		display: block;
+		width: 100%;
+	}
+
+	.box {
+		position: relative;
+		top: -200px;
+	}
+
+	main {
+		position: absolute;
 	}
 }
