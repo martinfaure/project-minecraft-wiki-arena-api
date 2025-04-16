@@ -123,7 +123,6 @@ nav {
 
 .search-bar-nav input {
 	width: 70%;
-	background-color: transparents;
 	border: none;
 	outline: none;
 	font-weight: 700;
@@ -140,4 +139,57 @@ nav {
 .search-bar-nav input:focus {
 	outline: none;
 	opacity: 1;
+}
+
+.pages-nav ul {
+	display: none;
+}
+
+.logo-weather-night {
+	display: none;
+}
+
+@media screen and (min-width: 700px) {
+	.pages-nav ul {
+		display: flex;
+		gap: 15px;
+	}
+
+	.pages-nav ul li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+	}
+
+	.pages-nav ul li:active {
+		text-decoration: underline solid 3px white;
+	}
+
+	.pages-nav ul li img {
+		width: 30%;
+	}
+
+	.pages-nav {
+		display: flex;
+		color: white;
+	}
+
+	.search-bar-nav input {
+		width: 50%;
+	}
+
+	.menu-burger {
+		display: none;
+	}
+
+	.logo-weather-night {
+		display: block;
+	}
+
+	.search-bar-nav {
+		width: 23%;
+		justify-content: start;
+		padding-left: 15px;
+	}
 }
