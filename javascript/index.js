@@ -65,11 +65,13 @@ function createmenu() {
 
 	imgclose.addEventListener("click", () => {
 		menuburger.remove();
+		document.documentElement.style.overflow = "auto";
 	});
 }
 
 menu.addEventListener("click", () => {
 	createmenu();
+	document.documentElement.style.overflow = "hidden";
 });
 
 logoall.addEventListener("click", () => {
