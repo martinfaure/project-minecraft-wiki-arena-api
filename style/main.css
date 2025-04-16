@@ -4,14 +4,20 @@ body {
 	position: relative;
 	background: center/cover url(../assets/background-image-nav.svg);
 	font-family: "Rubik", sans-serif;
+	height: 100vh;
 }
 
 .bgd {
 	width: 100%;
 }
 
+.activeburger {
+	overflow: hidden;
+}
+
 .menuburger {
 	position: relative;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	bottom: 0;

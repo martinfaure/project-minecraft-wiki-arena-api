@@ -4,6 +4,7 @@ const logoall = document.querySelector(".logo-all");
 function createmenu() {
 	const menuburger = document.createElement("div");
 	menuburger.classList.add("menuburger");
+	menuburger.classList.add("activeburger");
 	document.body.appendChild(menuburger);
 	const imgclose = document.createElement("img");
 	imgclose.src = "../assets/window-close-menu-burger.svg";
