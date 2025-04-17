@@ -1,146 +1,165 @@
-tab-info {
-	display: flex;
-	gap: 15px;
-	background-color: #f5c2cd;
-	border-left: solid 5px #bc5c70;
-	padding: 5px;
+.tab-info {
+  display: flex;
+  gap: 15px;
+  background-color: #f5c2cd;
+  border-left: solid 5px #bc5c70;
+  padding: 5px;
 }
 
 .sec-info {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .sec-info p span {
-	font-weight: 600;
+  font-weight: 600;
 }
-
 h1 {
-	line-height: 10°+09856230%;
+  line-height: 10°+09856230%;
 }
 
 .class-type {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }
 
 .form {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	align-items: center;
-	margin-left: auto;
-	margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .inputform {
-	width: 100%;
+  width: 100%;
 }
 
 .search-bar {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	background-color: white;
-	border-radius: 8px;
-	justify-content: space-between;
-	padding: 10px;
-	gap: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 5px;
 }
 
 #input-text {
-	width: 100%;
-	height: 100%;
-	border: none;
-	outline: none;
-	background-color: white;
-	border-radius: 10px;
-	padding-left: 10px;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 100%;
-	letter-spacing: 0%;
-	color: #dbdbdb;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #dbdbdb;
 }
 
 .inputform {
-	border: none;
-	padding: 5px;
-	border-radius: 4px;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .inputform:focus {
-	outline: none;
+  outline: none;
 }
 
 #input-text:focus {
-	outline: none;
-	color: black;
-	opacity: 1;
+  outline: none;
+  color: black;
+  opacity: 1;
 }
 
 .label-select {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #3a3a3a;
+  font-size: 14px;
+  line-height: auto;
+  font-weight: bold;
 }
 
 #select {
-	border-radius: 4px;
-	border: none;
-	color: #3a3a3a;
-	font-weight: 700;
-	font-size: 12px;
-	line-height: 100%;
-	letter-spacing: 0%;
-	text-align: center;
-	vertical-align: middle;
-	padding: 5px;
+  border-radius: 4px;
+  border: none;
+  color: #3a3a3a;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
 }
 
 #select5 {
-	border-radius: 4px;
-	border: none;
-	color: #3a3a3a;
-	font-weight: 700;
-	font-size: 12px;
-	line-height: 100%;
-	letter-spacing: 0%;
-	text-align: center;
-	vertical-align: middle;
-	padding: 5px;
+  border-radius: 4px;
+  border: none;
+  color: #3a3a3a;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
 }
 #select5:focus {
-	outline: none;
+  outline: none;
 }
 
 .formulaire {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	align-items: center;
-	margin-left: auto;
-	margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search {
-	background-color: #4f8c69;
-	color: #ffffff;
-	font-weight: 700;
-	font-size: 22px;
-	line-height: 100%;
-	letter-spacing: 0%;
-	text-align: center;
-	vertical-align: middle;
-	width: 65%;
-	border-radius: 999px;
-	padding: 15px;
-	border: none;
+  background-color: #4f8c69;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  width: 65%;
+  border-radius: 999px;
+  padding: 15px;
+  border: none;
 }
 
 .formulaire hr {
-	width: 90%;
-	height: 20%;
+  width: 90%;
+  height: 20%;
+}
+
+@media screen and (min-width: 850px) {
+  .class-type {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .search {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .form {
+    width: 100%;
+  }
 }
