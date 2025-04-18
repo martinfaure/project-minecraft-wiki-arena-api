@@ -181,3 +181,9 @@ h1 {
 		width: 90%;
 	}
 }
+
+.grid-card {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+}

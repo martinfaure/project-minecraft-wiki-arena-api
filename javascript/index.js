@@ -68,6 +68,45 @@ function createmenu() {
 		document.documentElement.style.overflow = "auto";
 	});
 }
+const cardheader = document.querySelector(".grid-card");
+const sectioncard = document.querySelector(".formulaire");
+function createdcardanimals(pren, classification, tipe, imgalt, imag) {
+	const card = document.createElement("div");
+	card.classList.add("mobSpecs");
+
+	const nameanimal = document.createElement("span");
+	nameanimal.textContent = pren;
+	nameanimal.classList.add("mobSpecsHeader");
+	card.appendChild(nameanimal);
+
+	const img = document.createElement("img");
+	img.src = imag;
+	img.alt = imgalt;
+	card.appendChild(img);
+
+	const classificationanimal = document.createElement("a");
+	classificationanimal.textContent = classification;
+	classificationanimal.classList.add("a");
+	card.appendChild(classificationanimal);
+
+	const typeanimal = document.createElement("span");
+	typeanimal.textContent = tipe;
+	typeanimal.classList.add("type-animal-card");
+	card.appendChild(typeanimal);
+
+	const button = document.createElement("button");
+	button.textContent = "SEE MORE";
+	card.appendChild(button);
+
+	cardheader.appendChild(card);
+	sectioncard.appendChild(cardheader);
+
+	btnSearch.addEventListener("click", () => {
+		cardheader.remove();
+	});
+
+	return card;
+}
 
 menu.addEventListener("click", () => {
 	createmenu();
@@ -98,11 +137,27 @@ type.addEventListener("change", () => {
 	console.log(restype);
 });
 
+document.addEventListener("DOMContentLoaded", async () => {
+	let url = `http://192.168.1.15:3000/v1/entities`;
+	const response = await fetch(url);
+	const data = await response.json();
+	for (let j = 0; j < data.length; j++) {
+		createdcardanimals(
+			data[j].name,
+			data[j].classification,
+			data[j].type,
+			data[j].images,
+			data[j].image
+		);
+	}
+});
+
 btnSearch.addEventListener("click", async () => {
 	let inputvalue = inputSearch.value.trim();
 	let inputarmorvalue = inputarmor.value.trim();
 	let inputhealthvalue = inputhealth.value.trim();
 	let url = `http://192.168.1.15:3000/v1/entities?name=${inputvalue}`;
+
 	if (inputarmorvalue !== "") {
 		url += `&armor=${inputarmorvalue}`;
 	}
@@ -118,11 +173,19 @@ btnSearch.addEventListener("click", async () => {
 	if (restype !== "" || type.value == "") {
 		url += `&type=${restype}`;
 	}
-	console.log("URL utilisée :", url);
 	const response = await fetch(url);
 	const data = await response.json();
 	console.log(data);
 	inputSearch.value = "";
 	inputarmor.value = "";
 	inputhealth.value = "";
+	for (let j = 0; j < data.length; j++) {
+		createdcardanimals(
+			data[j].name,
+			data[j].classification,
+			data[j].type,
+			data[j].images,
+			data[j].image
+		);
+	}
 });
