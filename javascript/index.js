@@ -78,11 +78,48 @@ logoall.addEventListener("click", () => {
 	window.location.href = "../index.html";
 });
 
-const inputSearch = document.querySelector("#input-text");
+const inputSearch = document.querySelector(".input-tqt");
 const btnSearch = document.querySelector("#search");
+const inputarmor = document.querySelector("#numbrearmor");
+const inputhealth = document.querySelector("#numberheal");
+const inputdamage = document.querySelector("#numberdamage");
+
+function calssification() {
+	const calssificationelement = document.querySelectorAll(".option");
+
+	for (let i = 0; i < calssificationelement.length; i++) {
+		const allclassification = calssificationelement[i];
+		console.log(allclassification.value);
+
+		let classificatiores = "";
+		allclassification.addEventListener("change", () => {
+			classificatiores = allclassification.value;
+			console.log(classificatiores);
+		});
+	}
+}
+calssification();
 
 btnSearch.addEventListener("click", async () => {
-	const response = await fetch(`http://192.168.1.15:3000/v1/entities`);
+	let inputvalue = inputSearch.value.trim();
+	let inputarmorvalue = inputarmor.value.trim();
+	let inputhealthvalue = inputhealth.value.trim();
+	let url = `http://192.168.1.15:3000/v1/entities?name=${inputvalue}`;
+	if (inputarmorvalue !== "") {
+		url += `&armor=${inputarmorvalue}`;
+	}
+	if (inputhealthvalue !== "") {
+		url += `&health=${inputhealthvalue}`;
+	}
+	if (inputdamage.value !== "") {
+		url += `&damage=${inputdamage.value}`;
+	}
+
+	console.log("URL utilisée :", url);
+	const response = await fetch(url);
 	const data = await response.json();
 	console.log(data);
+	inputSearch.value = "";
+	inputarmor.value = "";
+	inputhealth.value = "";
 });

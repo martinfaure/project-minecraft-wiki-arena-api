@@ -1,183 +1,192 @@
 <!DOCTYPE html>
 <html lang="FR-fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style/normalize.css" />
-    <link rel="stylesheet" href="../style/reset.css" />
-    <link rel="stylesheet" href="../style/main.css" />
-    <link rel="stylesheet" href="../style/rules.css" />
-    <link rel="stylesheet" href="../style/renseignements.css" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style/normalize.css" />
+		<link rel="stylesheet" href="../style/reset.css" />
+		<link rel="stylesheet" href="../style/main.css" />
+		<link rel="stylesheet" href="../style/rules.css" />
+		<link rel="stylesheet" href="../style/renseignements.css" />
 
-    <title>renseignement</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="logo-nav-bar">
-          <img
-            class="logo-all"
-            src="../assets/logo-mobile.svg"
-            alt="logo-site-mincraft"
-          />
-          <span class="title-logo"> Minecraft wiki </span>
-          <div class="pages-nav">
-            <ul>
-              <li>
-                <img src="/assets/compass.svg" alt="" /> <span>EXPLORE</span>
-              </li>
-              <li>
-                <img src="/assets/sword-cross.svg" alt="" />
-                <span>ARENA</span>
-              </li>
-              <li>
-                <img src="/assets/book-open-variant.svg" alt="" />
-                <span>RULES</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="search-bar-nav">
-          <img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
-          <input
-            type="text"
-            name="text"
-            id="input-text"
-            placeholder="Search..."
-          />
-        </div>
-        <img
-          id="menu-burger-mobile"
-          class="menu-burger"
-          src="../assets/logo-menu-burger.svg"
-          alt="logo-menu-burger"
-        />
-        <img
-          class="logo-weather-night"
-          src="../assets/weather-night.svg"
-          alt="logo-menu-burger"
-        />
-      </nav>
-    </header>
-    <main>
-      <img class="bgd" src="../assets/background-cloud.svg" alt="" />
-      <img
-        class="bgd"
-        class="bgd-dirt"
-        src="../assets/background-dirt.svg"
-        alt=""
-      />
-      <img class="bgd-tab" src="../assets/background-cloud-tab.svg" alt="" />
-      <img
-        class="bgd-dirt-tab"
-        src="../assets/background-dirt-tab.svg"
-        alt=""
-      />
-      <img class="bgd-pc" src="../assets/background-cloud-pc.svg" alt="" />
-      <img class="bgd-dirt-pc" src="../assets/background-dirt-pc.svg" alt="" />
-      <div class="box">
-        <h1>Explore Minecraft entities</h1>
-        <div class="tab-info">
-          <img src="../assets/tableau.svg" alt="" />
-          <p>
-            <span>This page use many images.</span>It is not recommended for
-            people with limited or slow internet connections to read through
-            this page.
-          </p>
-        </div>
-        <div class="sec-info-img-resp">
-          <section class="sec-info">
-            <p>
-              An <span>Entity</span> is an AI-driven game entity resembling a
-              living creature. Besides its common meaning, the term "mob" is
-              short for "mobile entity".[1] All entities can be attacked and
-              hurt (from falling, attacked by a player or another entity,
-              falling into the void, hit by an arrow, etc), and have some form
-              of voluntary movement.
-            </p>
-            <p>
-              Different types of entities often have unique AI and drop good or
-              bad loot depending on the entity that was killed.
-            </p>
-          </section>
-          <img
-            class="mobs-img"
-            src="../assets/personnage-mincraft.svg"
-            alt=""
-          />
-        </div>
-        <section class="sec-2">
-          <h2>List of entities</h2>
-          <hr />
-          <span>
-            Entities are classifie by their nature from the player's
-            perspective. You can search for one or multiples entities by their
-            name using the search bar or simply by filling appropriate filters
-            (type, health, armor, damage, etc..)</span
-          >
-        </section>
-        <section class="formulaire">
-          <form action="for" class="form">
-            <div class="search-bar">
-              <img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
-              <input
-                type="text"
-                name="text"
-                id="input-text"
-                placeholder="Search..."
-              />
-            </div>
-            <div class="class-type">
-              <label class="label-select">
-                Classification
-                <select id="select" name="input">
-                  <option value="">Chose</option>
-                </select>
-              </label>
-              <label class="label-select">
-                Type
-                <select id="select5" name="input">
-                  <option value="">Chose</option>
-                </select>
-              </label>
-              <label class="label-select">
-                Health
-                <input
-                  class="inputform"
-                  type="number"
-                  name="nombre"
-                  id="numberheal"
-                  placeholder="18"
-                />
-              </label>
-              <label class="label-select">
-                Armor
-                <input
-                  class="inputform"
-                  type="number"
-                  name="nombre"
-                  id="numbrearmor"
-                  placeholder="12"
-                />
-              </label>
-              <label class="label-select">
-                Damage
-                <input
-                  class="inputform"
-                  type="number"
-                  name="nombre"
-                  id="numberdamage"
-                  placeholder="2"
-                />
-              </label>
-            </div>
-            <button id="search" class="search">SEARCH</button>
-          </form>
-          <hr />
-        </section>
-      </div>
-    </main>
-    <script src="../javascript/index.js"></script>
-    <script src="../javascript/renseignements.js"></script>
-  </body>
+		<title>renseignement</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo-nav-bar">
+					<img
+						class="logo-all"
+						src="../assets/logo-mobile.svg"
+						alt="logo-site-mincraft"
+					/>
+					<span class="title-logo"> Minecraft wiki </span>
+					<div class="pages-nav">
+						<ul>
+							<li>
+								<img src="/assets/compass.svg" alt="" /> <span>EXPLORE</span>
+							</li>
+							<li>
+								<img src="/assets/sword-cross.svg" alt="" />
+								<span>ARENA</span>
+							</li>
+							<li>
+								<img src="/assets/book-open-variant.svg" alt="" />
+								<span>RULES</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="search-bar-nav">
+					<img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
+					<input
+						type="text"
+						name="text"
+						id="input-text"
+						placeholder="Search..."
+					/>
+				</div>
+				<img
+					id="menu-burger-mobile"
+					class="menu-burger"
+					src="../assets/logo-menu-burger.svg"
+					alt="logo-menu-burger"
+				/>
+				<img
+					class="logo-weather-night"
+					src="../assets/weather-night.svg"
+					alt="logo-menu-burger"
+				/>
+			</nav>
+		</header>
+		<main>
+			<img class="bgd" src="../assets/background-cloud.svg" alt="" />
+			<img
+				class="bgd"
+				class="bgd-dirt"
+				src="../assets/background-dirt.svg"
+				alt=""
+			/>
+			<img class="bgd-tab" src="../assets/background-cloud-tab.svg" alt="" />
+			<img
+				class="bgd-dirt-tab"
+				src="../assets/background-dirt-tab.svg"
+				alt=""
+			/>
+			<img class="bgd-pc" src="../assets/background-cloud-pc.svg" alt="" />
+			<img class="bgd-dirt-pc" src="../assets/background-dirt-pc.svg" alt="" />
+			<div class="box">
+				<h1>Explore Minecraft entities</h1>
+				<div class="tab-info">
+					<img src="../assets/tableau.svg" alt="" />
+					<p>
+						<span>This page use many images.</span>It is not recommended for
+						people with limited or slow internet connections to read through
+						this page.
+					</p>
+				</div>
+				<div class="sec-info-img-resp">
+					<section class="sec-info">
+						<p>
+							An <span>Entity</span> is an AI-driven game entity resembling a
+							living creature. Besides its common meaning, the term "mob" is
+							short for "mobile entity".[1] All entities can be attacked and
+							hurt (from falling, attacked by a player or another entity,
+							falling into the void, hit by an arrow, etc), and have some form
+							of voluntary movement.
+						</p>
+						<p>
+							Different types of entities often have unique AI and drop good or
+							bad loot depending on the entity that was killed.
+						</p>
+					</section>
+					<img
+						class="mobs-img"
+						src="../assets/personnage-mincraft.svg"
+						alt=""
+					/>
+				</div>
+				<section class="sec-2">
+					<h2>List of entities</h2>
+					<hr />
+					<span>
+						Entities are classifie by their nature from the player's
+						perspective. You can search for one or multiples entities by their
+						name using the search bar or simply by filling appropriate filters
+						(type, health, armor, damage, etc..)</span
+					>
+				</section>
+				<section class="formulaire">
+					<form action="for" class="form">
+						<div class="search-bar">
+							<img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
+							<input
+								type="text"
+								name="text"
+								class="input-tqt"
+								id="input-text"
+								placeholder="Search..."
+							/>
+						</div>
+						<div class="class-type">
+							<label class="label-select">
+								Classification
+								<select id="select" name="input">
+									<option class="option" value="Chose">Chose</option>
+									<option class="option" value="arthropod">arthropod</option>
+									<option class="option" value="undead">undead</option>
+									<option class="option" value="animal">animal</option>
+									<option class="option" value="aquatic">aquatic</option>
+									<option class="option" value="monster">monster</option>
+								</select>
+							</label>
+							<label class="label-select">
+								Type
+								<select id="select5" name="input">
+									<option value="">Chose</option>
+									<option value="">passive</option>
+									<option value="">neutral</option>
+									<option value="">hostile</option>
+								</select>
+							</label>
+							<label class="label-select">
+								Health
+								<input
+									class="inputform"
+									type="number"
+									name="nombre"
+									id="numberheal"
+									placeholder="18"
+								/>
+							</label>
+							<label class="label-select">
+								Armor
+								<input
+									class="inputform"
+									type="number"
+									name="nombre"
+									id="numbrearmor"
+									placeholder="12"
+								/>
+							</label>
+							<label class="label-select">
+								Damage
+								<input
+									class="inputform"
+									type="number"
+									name="nombre"
+									id="numberdamage"
+									placeholder="2"
+								/>
+							</label>
+						</div>
+					</form>
+					<button id="search" class="search">SEARCH</button>
+					<hr />
+				</section>
+			</div>
+		</main>
+		<script src="../javascript/index.js"></script>
+		<script src="../javascript/renseignements.js"></script>
+	</body>
 </html>
