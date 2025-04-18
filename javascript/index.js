@@ -83,22 +83,20 @@ const btnSearch = document.querySelector("#search");
 const inputarmor = document.querySelector("#numbrearmor");
 const inputhealth = document.querySelector("#numberheal");
 const inputdamage = document.querySelector("#numberdamage");
-
-function calssification() {
-	const calssificationelement = document.querySelectorAll(".option");
-
-	for (let i = 0; i < calssificationelement.length; i++) {
-		const allclassification = calssificationelement[i];
-		console.log(allclassification.value);
-
-		let classificatiores = "";
-		allclassification.addEventListener("change", () => {
-			classificatiores = allclassification.value;
-			console.log(classificatiores);
-		});
-	}
-}
-calssification();
+const select = document.getElementById("select");
+let resselect = "";
+select.addEventListener("change", () => {
+	const selectedValue = select.value;
+	resselect = selectedValue;
+	console.log(resselect);
+});
+const type = document.getElementById("select5");
+let restype = "";
+type.addEventListener("change", () => {
+	const typevalue = type.value;
+	restype = typevalue;
+	console.log(restype);
+});
 
 btnSearch.addEventListener("click", async () => {
 	let inputvalue = inputSearch.value.trim();
@@ -114,7 +112,12 @@ btnSearch.addEventListener("click", async () => {
 	if (inputdamage.value !== "") {
 		url += `&damage=${inputdamage.value}`;
 	}
-
+	if (resselect !== "" || select.value == "") {
+		url += `&classification=${resselect}`;
+	}
+	if (restype !== "" || type.value == "") {
+		url += `&type=${restype}`;
+	}
 	console.log("URL utilisée :", url);
 	const response = await fetch(url);
 	const data = await response.json();
