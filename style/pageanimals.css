@@ -19,6 +19,10 @@
 	text-shadow: 2px 2px 2px 0px #00000080;
 }
 
+.mobSpecsMain img {
+	margin: auto;
+}
+
 .mobSpecsValues {
 	display: flex;
 	gap: 10px;
@@ -49,4 +53,11 @@
 }
 .mobSpecsFooterDetails span {
 	align-content: center;
+}
+
+@media screen and (min-width: 750px) {
+	.respMobSpecs {
+		display: flex;
+		flex-grow: 1;
+	}
 }
