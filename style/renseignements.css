@@ -7,6 +7,15 @@
 	padding: 5px;
 }
 
+.tab-info-yellow {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	background-color: #f5e2bc;
+	border-left: solid 5px #c2ac7f;
+	padding: 5px;
+}
+
 .sec-info {
 	display: flex;
 	flex-direction: column;

@@ -1,0 +1,63 @@
+.mobSpecs {
+	border: solid 2px #4f8c69;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.mobSpecsHeader {
+	background-color: #4f8c69;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	justify-content: center;
+	gap: 20px;
+	padding: 15px;
+	box-shadow: -4px -4px 2px 0px #00000040 inset;
+}
+.mobSpecsHeader span {
+	align-content: center;
+	text-shadow: 2px 2px 2px 0px #00000080;
+}
+
+.mobSpecsMain img {
+	margin: auto;
+}
+
+.mobSpecsValues {
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+}
+
+.mobSpecsValues div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.mobSpecsValues hr {
+	border: solid 1px #4f8c69;
+}
+
+.mobSpecsFooter button {
+	background-color: #4f8c69;
+	color: white;
+	padding: 10px;
+	box-shadow: -4px -4px 2px 0px #00000040 inset;
+	width: 100%;
+}
+
+.mobSpecsFooterDetails {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+.mobSpecsFooterDetails span {
+	align-content: center;
+}
+
+@media screen and (min-width: 850px) {
+	.respMobSpecs {
+		display: flex;
+		flex-grow: 1;
+	}
+}
