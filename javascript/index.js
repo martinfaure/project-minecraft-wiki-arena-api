@@ -127,7 +127,7 @@ function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
 
   cardheader.appendChild(card);
 
-  return card;
+  return cardheader;
 }
 
 menu.addEventListener("click", () => {
