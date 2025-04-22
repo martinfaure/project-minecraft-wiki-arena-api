@@ -131,7 +131,7 @@ function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
 
   cardheader.appendChild(card);
 
-  return card;
+  return cardheader;
 }
 
 menu.addEventListener("click", () => {
@@ -179,39 +179,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 btnSearch.addEventListener("click", async () => {
-  let inputvalue = inputSearch.value.trim();
+  let inputvalue = inputSearch.value.trim().toLowerCase();
   let inputarmorvalue = inputarmor.value.trim();
   let inputhealthvalue = inputhealth.value.trim();
-  let url = `http://51.38.232.174:3000/v1/entities?name=${inputvalue}`;
+  let url = `http://51.38.232.174:3000/v1/entities`;
 
-  if (inputarmorvalue !== "") {
-    url += `&armor=${inputarmorvalue}`;
-  }
-  if (inputhealthvalue !== "") {
-    url += `&health=${inputhealthvalue}`;
-  }
-  if (inputdamage.value !== "") {
-    url += `&damage=${inputdamage.value}`;
-  }
-  if (resselect !== "" || select.value == "") {
-    url += `&classification=${resselect}`;
-  }
-  if (restype !== "" || type.value == "") {
-    url += `&type=${restype}`;
-  }
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
+
+  let filteredData = [];
+  for (let i = 0; i < data.length; i++) {
+    let animal = data[i];
+    if (animal.name.toLowerCase().includes(inputvalue)) {
+      if (
+        (inputarmorvalue === "" || animal.armor == inputarmorvalue) &&
+        (inputhealthvalue === "" || animal.health == inputhealthvalue)
+      ) {
+        filteredData.push(animal);
+      }
+    }
+  }
+
   inputSearch.value = "";
   inputarmor.value = "";
   inputhealth.value = "";
-  for (let j = 0; j < data.length; j++) {
-    createdcardanimals(
-      data[j].name,
-      data[j].classification,
-      data[j].type,
-      data[j].images,
-      data[j].image
-    );
+  cardheader.innerHTML = "";
+
+  for (let j = 0; j < filteredData.length; j++) {
+    let a = filteredData[j];
+    createdcardanimals(a.name, a.classification, a.type, a.images, a.image);
   }
 });
