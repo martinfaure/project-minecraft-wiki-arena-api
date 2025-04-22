@@ -1,54 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../style/normalize.css" />
-		<link rel="stylesheet" href="../style/reset.css" />
-		<link rel="stylesheet" href="../style/main.css" />
-		<link rel="stylesheet" href="../style/arena.css" />
-		<title>Projet mincraft | EDEN SCHOOL</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<div class="logo-nav-bar">
-					<img
-						class="logo-all"
-						src="../assets/logo-mobile.svg"
-						alt="logo-site-mincraft"
-					/>
-					<span class="title-logo"> Minecraft wiki </span>
-				</div>
-				<div class="search-bar-nav">
-					<img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
-					<input
-						type="text"
-						name="text"
-						id="input-text"
-						placeholder="Search..."
-					/>
-				</div>
-				<img
-					id="menu-burger-mobile"
-					class="menu-burger"
-					src="../assets/logo-menu-burger.svg"
-					alt="logo-menu-burger"
-				/>
-			</nav>
-		</header>
-		<main>
-			<img class="bgd" src="../assets/background-cloud.svg" alt="" />
-			<img class="bgd" src="../assets/background-dirt.svg" alt="" />
-			<div class="box">
-				<div class="statue-name">
-					<h1>Arena</h1>
-					<div class="statue-arena">
-						<span class="statue-text">OPEN</span>
-					</div>
-				</div>
-			</div>
-		</main>
-		<script src="../javascript/index.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/normalize.css" />
+    <link rel="stylesheet" href="../style/reset.css" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <link rel="stylesheet" href="../style/arena.css" />
+    <title>Projet mincraft | EDEN SCHOOL</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-nav-bar">
+          <img
+            class="logo-all"
+            src="../assets/logo-mobile.svg"
+            alt="logo-site-mincraft"
+          />
+          <span class="title-logo"> Minecraft wiki </span>
+          <div class="pages-nav">
+            <ul>
+              <a href="../index.html"
+                ><li>
+                  <img src="/assets/compass.svg" alt="" />
+                  <span>EXPLORE</span>
+                </li>
+              </a>
+              <a href="../html/arena.html">
+                <li>
+                  <img src="/assets/sword-cross.svg" alt="" />
+                  <span>ARENA</span>
+                </li>
+              </a>
+              <a href="../html/rules.html">
+                <li>
+                  <img src="/assets/book-open-variant.svg" alt="" />
+                  <span>RULES</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="search-bar-nav">
+          <img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
+          <input
+            type="text"
+            name="text"
+            id="input-text"
+            placeholder="Search..."
+          />
+        </div>
+        <img
+          id="menu-burger-mobile"
+          class="menu-burger"
+          src="../assets/logo-menu-burger.svg"
+          alt="logo-menu-burger"
+        />
+        <img
+          class="logo-weather-night"
+          src="../assets/weather-night.svg"
+          alt="logo-menu-burger"
+        />
+      </nav>
+    </header>
+    <main>
+      <img class="bgd" src="../assets/background-cloud.svg" alt="" />
+      <img
+        class="bgd"
+        class="bgd-dirt"
+        src="../assets/background-dirt.svg"
+        alt=""
+      />
+      <img class="bgd-tab" src="../assets/background-cloud-tab.svg" alt="" />
+      <img
+        class="bgd-dirt-tab"
+        src="../assets/background-dirt-tab.svg"
+        alt=""
+      />
+      <img class="bgd-pc" src="../assets/background-cloud-pc.svg" alt="" />
+      <img class="bgd-dirt-pc" src="../assets/background-dirt-pc.svg" alt="" />
+      <div class="box">
+        <div class="statue-name">
+          <h1>Arena</h1>
+          <div class="statue-arena">
+            <span class="statue-text">OPEN</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../javascript/index.js"></script>
+  </body>
 </html>
