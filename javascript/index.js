@@ -121,13 +121,17 @@ function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
 
   const button = document.createElement("button");
   button.textContent = "SEE MORE";
+
+  button.addEventListener("click", () => {
+    window.location.href = "../html/pageanimals.html";
+  });
   footer.appendChild(button);
 
   card.appendChild(footer);
 
   cardheader.appendChild(card);
 
-  return cardheader;
+  return card;
 }
 
 menu.addEventListener("click", () => {
