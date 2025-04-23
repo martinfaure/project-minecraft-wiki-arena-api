@@ -157,12 +157,10 @@ function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
   return cardheader;
 }
 
-if (menu) {
-  menu.addEventListener("click", () => {
-    createmenu();
-    document.documentElement.style.overflow = "hidden";
-  });
-}
+menu.addEventListener("click", () => {
+  createmenu();
+  document.documentElement.style.overflow = "hidden";
+});
 
 logoall.addEventListener("click", () => {
   window.location.href = "../index.html";
@@ -173,14 +171,14 @@ const btnSearch = document.querySelector("#search");
 const inputarmor = document.querySelector("#numbrearmor");
 const inputhealth = document.querySelector("#numberheal");
 const inputdamage = document.querySelector("#numberdamage");
-const select = document.querySelector("#select");
+const select = document.getElementById("select");
 let resselect = "";
 select.addEventListener("change", () => {
   const selectedValue = select.value;
   resselect = selectedValue;
   console.log(resselect);
 });
-const type = document.querySelector("#select5");
+const type = document.getElementById("select5");
 let restype = "";
 type.addEventListener("change", () => {
   const typevalue = type.value;
