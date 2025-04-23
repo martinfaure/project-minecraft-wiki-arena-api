@@ -1,182 +1,161 @@
 <!DOCTYPE html>
 <html lang="FR-fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style/normalize.css" />
-    <link rel="stylesheet" href="../style/reset.css" />
-    <link rel="stylesheet" href="../style/main.css" />
-    <link rel="stylesheet" href="../style/rules.css" />
-    <link rel="stylesheet" href="../style/renseignements.css" />
-    <link rel="stylesheet" href="../style/pageanimals.css" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style/normalize.css" />
+		<link rel="stylesheet" href="../style/reset.css" />
+		<link rel="stylesheet" href="../style/main.css" />
+		<link rel="stylesheet" href="../style/rules.css" />
+		<link rel="stylesheet" href="../style/renseignements.css" />
+		<link rel="stylesheet" href="../style/pageanimals.css" />
 
-    <title>renseignement</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="logo-nav-bar">
-          <img
-            class="logo-all"
-            src="../assets/logo-mobile.svg"
-            alt="logo-site-mincraft"
-          />
-          <span class="title-logo"> Minecraft wiki </span>
-          <div class="pages-nav">
-            <ul>
-              <li>
-                <img src="/assets/compass.svg" alt="" /> <span>EXPLORE</span>
-              </li>
-              <li>
-                <img src="/assets/sword-cross.svg" alt="" />
-                <span>ARENA</span>
-              </li>
-              <li>
-                <img src="/assets/book-open-variant.svg" alt="" />
-                <span>RULES</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="search-bar-nav">
-          <img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
-          <input
-            type="text"
-            name="text"
-            id="input-text"
-            placeholder="Search..."
-          />
-        </div>
-        <img
-          id="menu-burger-mobile"
-          class="menu-burger"
-          src="../assets/logo-menu-burger.svg"
-          alt="logo-menu-burger"
-        />
-        <img
-          class="logo-weather-night"
-          src="../assets/weather-night.svg"
-          alt="logo-menu-burger"
-        />
-      </nav>
-    </header>
-    <main>
-      <img class="bgd" src="../assets/background-cloud.svg" alt="" />
-      <img
-        class="bgd"
-        class="bgd-dirt"
-        src="../assets/background-dirt.svg"
-        alt=""
-      />
-      <img class="bgd-tab" src="../assets/background-cloud-tab.svg" alt="" />
-      <img
-        class="bgd-dirt-tab"
-        src="../assets/background-dirt-tab.svg"
-        alt=""
-      />
-      <img class="bgd-pc" src="../assets/background-cloud-pc.svg" alt="" />
-      <img class="bgd-dirt-pc" src="../assets/background-dirt-pc.svg" alt="" />
-      <div class="box">
-        <h1 id="nameMob">Armadillo</h1>
-        <div class="tab-info-yellow">
-          <img src="../assets/stub-image (1).svg" alt="" />
-          <p>
-            <span>This article is a stub.</span> You can help by expanding it
-          </p>
-        </div>
-        <div class="respMobSpecs">
-          <p id="mobDescription">
-            Armadillo is a mob that spawns in warm biomes. Spider eyes, brushes,
-            and lead can be used on the armadillo to breed, brush, or lead it
-            respectively. When a player is sprinting, mounting, or causes harm
-            to an armadillo, or when an undead hostile mob is nearby, it rolls
-            up into a cube-like shape to protect itself from harm.
-          </p>
-          <section class="mobSpecs">
-            <div class="mobSpecsHeader">
-              <img
-                id="iconMob"
-                src="../assets/Rectangle 14.svg"
-                alt="mob icon"
-              />
-              <span id="nameMob name">Armadillo</span>
-            </div>
-            <div class="mobSpecsMain">
-              <img id="mobImg" src="../assets/mobImg.svg" alt="" />
-              <div class="mobSpecsValues">
-                <div>
-                  <span>Health</span>
-                  <div>
-                    <span id="healid">0</span>
-                  </div>
-                </div>
-                <hr />
-                <div>
-                  <span>Armor</span>
-                  <div>
-                    <span id="armorid">0</span>
-                  </div>
-                </div>
-                <hr />
-                <div>
-                  <span>Strength</span>
-                  <div>
-                    <span id="strengid">0</span>
-                  </div>
-                </div>
-                <hr />
-                <div>
-                  <span>Classification</span>
-                  <div>
-                    <span id="classid">6</span>
-                  </div>
-                </div>
-                <hr />
-                <div>
-                  <span>Behavior</span>
-                  <div>
-                    <span class="behaviorid">Passive</span>
-                  </div>
-                </div>
-                <hr />
-              </div>
-            </div>
-            <div class="mobSpecsFooter">
-              <button>DETAILS</button>
-              <div class="mobSpecsFooterDetails">
-                <span>Size</span>
-                <div>
-                  <p>Height: <span id="heightid">0.00</span> Blocks</p>
-                  <p>Width: <span id="widthid">0.00</span> Blocks</p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </main>
-    <script>
-      window.addEventListener("DOMContentLoaded", async () => {
-        const id = localStorage.getItem("selectedAnimalId");
-        if (!id) return;
-
-        const response = await fetch(
-          `http://51.38.232.174:3000/v1/entities/${id}`
-        );
-        const data = await response.json();
-
-        document.querySelector("#nameMob").textContent = data.name;
-        document.querySelector("#mobDescription").textContent =
-          data.description;
-        document.querySelector("#healid").textContent = data.health;
-        document.querySelector("#armorid").textContent = data.armor;
-        document.querySelector("#classid").textContent = data.classification;
-        document.querySelector(".behaviorid").textContent = data.behavior;
-        document.querySelector("#heightid").textContent = data.height;
-        document.querySelector("#widthid").textContent = data.width;
-      });
-    </script>
-    <script src="../javascript/index.js"></script>
-    <script src="../javascript/renseignements.js"></script>
-  </body>
+		<title>renseignement</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo-nav-bar">
+					<img
+						class="logo-all"
+						src="../assets/logo-mobile.svg"
+						alt="logo-site-mincraft"
+					/>
+					<span class="title-logo"> Minecraft wiki </span>
+					<div class="pages-nav">
+						<ul>
+							<li>
+								<img src="/assets/compass.svg" alt="" /> <span>EXPLORE</span>
+							</li>
+							<li>
+								<img src="/assets/sword-cross.svg" alt="" />
+								<span>ARENA</span>
+							</li>
+							<li>
+								<img src="/assets/book-open-variant.svg" alt="" />
+								<span>RULES</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="search-bar-nav">
+					<img src="../assets/logo-search.svg" alt="logo-search-nav-bar" />
+					<input
+						type="text"
+						name="text"
+						id="input-text"
+						placeholder="Search..."
+					/>
+				</div>
+				<img
+					id="menu-burger-mobile"
+					class="menu-burger"
+					src="../assets/logo-menu-burger.svg"
+					alt="logo-menu-burger"
+				/>
+				<img
+					class="logo-weather-night"
+					src="../assets/weather-night.svg"
+					alt="logo-menu-burger"
+				/>
+			</nav>
+		</header>
+		<main>
+			<img class="bgd" src="../assets/background-cloud.svg" alt="" />
+			<img
+				class="bgd"
+				class="bgd-dirt"
+				src="../assets/background-dirt.svg"
+				alt=""
+			/>
+			<img class="bgd-tab" src="../assets/background-cloud-tab.svg" alt="" />
+			<img
+				class="bgd-dirt-tab"
+				src="../assets/background-dirt-tab.svg"
+				alt=""
+			/>
+			<img class="bgd-pc" src="../assets/background-cloud-pc.svg" alt="" />
+			<img class="bgd-dirt-pc" src="../assets/background-dirt-pc.svg" alt="" />
+			<div class="box">
+				<h1 id="nameMob">Armadillo</h1>
+				<div class="tab-info-yellow">
+					<img src="../assets/stub-image (1).svg" alt="" />
+					<p>
+						<span>This article is a stub.</span> You can help by expanding it
+					</p>
+				</div>
+				<div class="respMobSpecs">
+					<p id="mobDescription">
+						Armadillo is a mob that spawns in warm biomes. Spider eyes, brushes,
+						and lead can be used on the armadillo to breed, brush, or lead it
+						respectively. When a player is sprinting, mounting, or causes harm
+						to an armadillo, or when an undead hostile mob is nearby, it rolls
+						up into a cube-like shape to protect itself from harm.
+					</p>
+					<section class="mobSpecs">
+						<div class="mobSpecsHeader">
+							<img
+								id="iconMob"
+								src="../assets/Rectangle 14.svg"
+								alt="mob icon"
+							/>
+							<span id="nameMob name">Armadillo</span>
+						</div>
+						<div class="mobSpecsMain">
+							<img id="mobImg" src="../assets/mobImg.svg" alt="" />
+							<div class="mobSpecsValues">
+								<div>
+									<span>Health</span>
+									<div>
+										<span id="healid">0</span>
+									</div>
+								</div>
+								<hr />
+								<div>
+									<span>Armor</span>
+									<div>
+										<span id="armorid">0</span>
+									</div>
+								</div>
+								<hr />
+								<div>
+									<span>Strength</span>
+									<div>
+										<span id="strengid">0</span>
+									</div>
+								</div>
+								<hr />
+								<div>
+									<span>Classification</span>
+									<div>
+										<span id="classid">6</span>
+									</div>
+								</div>
+								<hr />
+								<div>
+									<span>Behavior</span>
+									<div>
+										<span class="behaviorid">Passive</span>
+									</div>
+								</div>
+								<hr />
+							</div>
+						</div>
+						<div class="mobSpecsFooter">
+							<button>DETAILS</button>
+							<div class="mobSpecsFooterDetails">
+								<span>Size</span>
+								<div>
+									<p>Height: <span id="heightid">0.00</span> Blocks</p>
+									<p>Width: <span id="widthid">0.00</span> Blocks</p>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+		<script src="../javascript/index.js"></script>
+		<script src="../javascript/renseignements.js"></script>
+	</body>
 </html>
