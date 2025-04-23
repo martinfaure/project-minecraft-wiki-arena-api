@@ -4,3 +4,14 @@ main {
 	justify-content: center;
 	align-items: center;
 }
+
+.form2 {
+	display: flex;
+	flex-direction: row;
+}
+
+.class-type2 {
+	display: grid;
+	grid-template-columns: repeat(1fr);
+	grid-gap: 20px;
+}
