@@ -92,8 +92,7 @@ function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
 	img.src = imgsrc;
 	img.alt = imgalt;
 
-	img.style.width = "100px";
-	img.style.height = "100px";
+	img.style.height = "250px";
 	img.style.objectFit = "cover";
 
 	main.appendChild(img);
@@ -127,8 +126,9 @@ function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
 	button.textContent = "SEE MORE";
 
 	button.addEventListener("click", () => {
-		window.location.href = "../html/pageanimals.html";
+		window.location.href = `../html/pageanimals.html`;
 	});
+
 	footer.appendChild(button);
 
 	card.appendChild(footer);
