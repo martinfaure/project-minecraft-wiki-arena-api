@@ -9,8 +9,7 @@
 		<link rel="stylesheet" href="../style/rules.css" />
 		<link rel="stylesheet" href="../style/renseignements.css" />
 		<link rel="stylesheet" href="../style/arena.css" />
-
-		<title>Projet mincraft | EDEN SCHOOL</title>
+		<title>Projet Minecraft | EDEN SCHOOL</title>
 	</head>
 	<body>
 		<header>
@@ -19,29 +18,28 @@
 					<img
 						class="logo-all"
 						src="../assets/logo-mobile.svg"
-						alt="logo-site-mincraft"
+						alt="logo-site-minecraft"
 					/>
-					<span class="title-logo"> Minecraft wiki </span>
+					<span class="title-logo"> Minecraft Wiki </span>
 					<div class="pages-nav">
 						<ul>
 							<a href="../index.html"
 								><li>
-									<img src="/assets/compass.svg" alt="" />
-									<span>EXPLORE</span>
-								</li>
-							</a>
-							<a href="../html/arena.html">
-								<li>
-									<img src="/assets/sword-cross.svg" alt="" />
-									<span>ARENA</span>
-								</li>
-							</a>
-							<a href="../html/rules.html">
-								<li>
-									<img src="/assets/book-open-variant.svg" alt="" />
-									<span>RULES</span>
-								</li>
-							</a>
+									<img src="/assets/compass.svg" alt="" /><span>EXPLORE</span>
+								</li></a
+							>
+							<a href="../html/arena.html"
+								><li>
+									<img src="/assets/sword-cross.svg" alt="" /><span>ARENA</span>
+								</li></a
+							>
+							<a href="../html/rules.html"
+								><li>
+									<img src="/assets/book-open-variant.svg" alt="" /><span
+										>RULES</span
+									>
+								</li></a
+							>
 						</ul>
 					</div>
 				</div>
@@ -93,15 +91,17 @@
 				<p>Choose an entity to spawn inside the <span>Arena.</span></p>
 				<form action="for" class="form2">
 					<div class="class-type2">
-						<label class="label-select">
-							Entity
+						<label class="label-select"
+							>Entity
 							<select id="select" name="input">
-								<option class="option" value="Chose">Chose</option>
-								<option class="option" value="arthropod">arthropod</option>
+								<option class="option" value="ghast">Ghast</option>
+								<option class="option" value="zombie">Zombie</option>
+								<option class="option" value="skeleton">Skeleton</option>
+								<!-- Ajoutez d'autres entités si nécessaire -->
 							</select>
 						</label>
-						<label class="label-select">
-							X Coordinate
+						<label class="label-select"
+							>X Coordinate
 							<input
 								class="inputform"
 								type="number"
@@ -110,8 +110,8 @@
 								placeholder="255.2"
 							/>
 						</label>
-						<label class="label-select">
-							Y Coordinate
+						<label class="label-select"
+							>Y Coordinate
 							<input
 								class="inputform"
 								type="number"
@@ -126,37 +126,20 @@
 				<section>
 					<h2>Arena entities</h2>
 					<hr />
-					<p>This list describe all entities registered inside the Arena.</p>
+					<p>This list describes all entities registered inside the Arena.</p>
 					<div class="div-scroll">
 						<table>
 							<thead>
 								<tr>
-									<th scope="col">Ent...</th>
-									<th scope="col">Na...</th>
+									<th scope="col">Entity</th>
+									<th scope="col">Name</th>
 									<th scope="col">X</th>
 									<th scope="col">Y</th>
-									<th scope="col">Stre...</th>
-									<th scope="col">del</th>
+									<th scope="col">Strength</th>
+									<th scope="col">Delete</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<th scope="row"></th>
-									<td>Armadilo</td>
-									<td>155.6</td>
-									<td>254.2</td>
-									<td>0</td>
-									<td><button>DELETE</button></td>
-								</tr>
-								<tr>
-									<th scope="row"></th>
-									<td>Armadilo</td>
-									<td>155.6</td>
-									<td>254.2</td>
-									<td>0</td>
-									<td><button>DELETE</button></td>
-								</tr>
-							</tbody>
+							<tbody id="entity-list"></tbody>
 						</table>
 					</div>
 				</section>
@@ -167,6 +150,65 @@
 				</section>
 			</div>
 		</main>
+
 		<script src="../javascript/index.js"></script>
+		<script>
+			const spawnBtn = document.getElementById("search");
+			const arena = document.querySelector(".arena");
+
+			spawnBtn.addEventListener("click", () => {
+				const entity = document.getElementById("select").value;
+				const x = parseFloat(document.getElementById("numberheal").value);
+				const y = parseFloat(document.getElementById("numbrearmor").value);
+				const z = 0;
+
+				const entityData = {
+					ghast: 27,
+				};
+
+				const entityId = entityData[entity];
+
+				fetch("http://51.38.232.174:3000/v1/arena/entities", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						entityId: entityId,
+						name: entity,
+						x: x,
+						y: y,
+						z: z,
+					}),
+				})
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data);
+						const mob = document.createElement("div");
+						mob.classList.add("mob");
+						mob.style.left = `${x}px`;
+						mob.style.top = `${y}px`;
+
+						const img = document.createElement("img");
+						img.src = `http://51.38.232.174:3000/static/${entity}.webp`; // Assurez-vous que l'image existe
+						img.alt = entity;
+
+						mob.appendChild(img);
+						arena.appendChild(mob);
+
+						const entityList = document.getElementById("entity-list");
+						const row = document.createElement("tr");
+						row.innerHTML = `
+            <td>${entity}</td>
+            <td>${entity}</td>
+            <td>${x}</td>
+            <td>${y}</td>
+            <td>${z}</td>  <!-- Ajouter la coordonnée Z -->
+            <td><button>DELETE</button></td>
+        `;
+						entityList.appendChild(row);
+					});
+			});
+		</script>
 	</body>
 </html>
