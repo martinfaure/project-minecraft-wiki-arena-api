@@ -99,7 +99,7 @@
                 src="../assets/Rectangle 14.svg"
                 alt="mob icon"
               />
-              <span id="mob name">Armadillo</span>
+              <span id="nameMob name">Armadillo</span>
             </div>
             <div class="mobSpecsMain">
               <img id="mobImg" src="../assets/mobImg.svg" alt="" />
@@ -155,6 +155,27 @@
         </div>
       </div>
     </main>
+    <script>
+      window.addEventListener("DOMContentLoaded", async () => {
+        const id = localStorage.getItem("selectedAnimalId");
+        if (!id) return;
+
+        const response = await fetch(
+          `http://51.38.232.174:3000/v1/entities/${id}`
+        );
+        const data = await response.json();
+
+        document.querySelector("#nameMob").textContent = data.name;
+        document.querySelector("#mobDescription").textContent =
+          data.description;
+        document.querySelector("#healid").textContent = data.health;
+        document.querySelector("#armorid").textContent = data.armor;
+        document.querySelector("#classid").textContent = data.classification;
+        document.querySelector(".behaviorid").textContent = data.behavior;
+        document.querySelector("#heightid").textContent = data.height;
+        document.querySelector("#widthid").textContent = data.width;
+      });
+    </script>
     <script src="../javascript/index.js"></script>
     <script src="../javascript/renseignements.js"></script>
   </body>
