@@ -12,7 +12,7 @@ main {
 .box {
 	display: flex;
 	flex-direction: column;
-	gap: 60px;
+	background-color: #e6eff4;
 }
 
 .box h1 {
