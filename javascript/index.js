@@ -71,7 +71,14 @@ function createmenu() {
 const cardheader = document.querySelector(".grid-card");
 const sectioncard = document.querySelector(".formulaire");
 
-function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
+function createdcardanimals(
+  name,
+  classification,
+  behavior,
+  imgalt,
+  imgsrc,
+  id
+) {
   const card = document.createElement("div");
   card.classList.add("mobSpecs");
 
@@ -126,32 +133,14 @@ function createdcardanimals(name, classification, behavior, imgalt, imgsrc) {
   button.classList.add("btngotoitem");
   button.textContent = "SEE MORE";
 
-  button.addEventListener("click", async () => {
-    window.location.href = `../html/pageanimals.html`;
-    let url = `http://51.38.232.174:3000/v1/entities`;
-    let idres = 0;
-    const namemobs = document.querySelector("#nameMob");
-    const desciptionmob = document.querySelector("#mobDescription");
-    const healid = document.querySelector("#healid");
-    const armorid = document.querySelector("#armorid");
-    const classif = document.querySelector("#classid");
-    const behavior = document.querySelector(".behaviorid");
-    const heightid = document.querySelector("#heightid");
-    const widthid = document.querySelector("#widthid");
-
-    let response = await fetch(url);
-    let data = await response.json();
-
-    for (let i = 0; i < data.length; i++) {
-      const dataelement = data[i];
-      console.log(dataelement.name);
-    }
+  //le btn en dessous pour redirectionner vers la page animals.html tout en gardant l'id de l'animal selectionner est fait avec de l'ia car je ne comprenais pas comment faire
+  button.addEventListener("click", () => {
+    localStorage.setItem("selectedAnimalId", id);
+    window.location.href = "../html/pageanimals.html";
   });
 
   footer.appendChild(button);
-
   card.appendChild(footer);
-
   cardheader.appendChild(card);
 
   return cardheader;
@@ -196,7 +185,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       data[j].classification,
       data[j].type,
       data[j].images,
-      data[j].image
+      data[j].image,
+      data[j].id
     );
   }
 });

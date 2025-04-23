@@ -164,6 +164,7 @@
           `http://51.38.232.174:3000/v1/entities/${id}`
         );
         const data = await response.json();
+        console.log(data);
 
         document.querySelector("#nameMob").textContent = data.name;
         document.querySelector("#mobDescription").textContent =
@@ -174,6 +175,8 @@
         document.querySelector(".behaviorid").textContent = data.behavior;
         document.querySelector("#heightid").textContent = data.height;
         document.querySelector("#widthid").textContent = data.width;
+        document.querySelector("#mobImg").src = data.image;
+        document.querySelector("#iconMob").src = data.icon;
       });
     </script>
     <script src="../javascript/index.js"></script>
