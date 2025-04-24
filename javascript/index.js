@@ -133,6 +133,8 @@ function createdcardanimals(
   button.classList.add("btngotoitem");
   button.textContent = "SEE MORE";
 
+  
+  
   //le btn en dessous pour redirectionner vers la page animals.html tout en gardant l'id de l'animal selectionner est fait avec de l'ia car je ne comprenais pas comment faire
   button.addEventListener("click", () => {
     localStorage.setItem("selectedAnimalId", id);
